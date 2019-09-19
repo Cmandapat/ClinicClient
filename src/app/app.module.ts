@@ -10,9 +10,10 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent],
+  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
