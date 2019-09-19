@@ -1,3 +1,10 @@
+# How to Run with Spring-Boot backend
+  1). Run ClinicServer through your IDE or command/terminal window
+  2). Either open project via Visual Studio code and proceed to open the terminal there or
+      use command/terminal direct yourself to project location run command:
+            ng serve
+   3). Navigate to `http://localhost:4200/`.
+
 # ClinicClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
