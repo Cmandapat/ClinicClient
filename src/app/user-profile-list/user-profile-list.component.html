@@ -1,0 +1,6 @@
+<p>user-profile-list works!</p>
+<ul>
+    <li *ngFor="let user of users | async">
+      {{ user.name }} - {{user.DOB}} - {{user.presentAddress}}
+    </li>
+</ul>
