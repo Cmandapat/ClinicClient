@@ -1,5 +1,25 @@
-<a routerLink="doctors" routerLinkActive="active">Doctors List</a>
-<hr>
-<a routerLink="users" routerLinkActive="active">Users List</a>
-
-<router-outlet></router-outlet>
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <!--Introductory Title-->
+        <h1 align="center">Welcome to the Clinic</h1>
+        <!--Start of the links to display-->
+        <div align="center">
+            <p>
+                <!--If no route is active, then only display the Sign In/Create Account option-->
+                <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="login" routerLinkActive="active">Sign In</a>
+                <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="new" routerLinkActive="active">Create Account</a>
+                <!--If the doctors route is active, then display the full array of links-->
+                <a *ngIf="isDoctorsRouteActivated()" routerLink="appointmentform" routerLinkActive="active">Make an Appointment</a>
+                <a *ngIf="isDoctorsRouteActivated()" routerLink="doctors" routerLinkActive="active">Doctors List</a>
+                <a *ngIf="isDoctorsRouteActivated()" routerLink="users" routerLinkActive="active">Users List</a>
+                <!--If the users route is active, then display the appointment form or the list of doctors-->
+                <a *ngIf="isUsersRouteActivated()" routerLink="appointmentform" routerLinkActive="active">Make an Appointment</a>
+                <a *ngIf="isUsersRouteActivated()" routerLink="doctors" routerLinkActive="active">Doctors List</a>
+            </p>
+        </div>
+        <router-outlet></router-outlet>
+    </body>
+</html>
