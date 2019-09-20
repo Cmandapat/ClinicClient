@@ -4,5 +4,6 @@ export class Doctor {
   yearsOfExperience: number;
   specialization: string;
   isLeave: number;
-  leaveDate: Date;
+  startLeaveDate: Date;
+  endLeaveDate: Date;
 }

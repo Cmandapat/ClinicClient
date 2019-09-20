@@ -1,0 +1,42 @@
+<h3>Leave Details</h3>
+
+<form>
+
+  <div>
+      <label for="id">
+        ID
+      </label>
+      <input [(ngModel)] ="reporter.id" name="reporter.id" type="text">
+    </div>
+
+    ID : {{reporter.id}} <br />
+  
+    <div>
+      <label for="startLeaveDate">
+       From
+      </label>
+      <input [(ngModel)] ="reporter.startLeaveDate" name="reporter.startLeaveDate" type="date" >
+    </div>
+
+    From : {{reporter.startLeaveDate}} <br />
+
+    <div>
+      <label for="endLeaveDate">
+       Until
+      </label>
+      <input [(ngModel)] ="reporter.endLeaveDate" name="reporter.endLeaveDate" type="date" >
+    </div>
+
+    Until : {{reporter.endLeaveDate}} <br />
+
+<button (click)="updateDoctor()">Submit</button>
+
+</form>
+<!-- 
+
+<ul>
+ <li *ngFor="let reporter of reporters | async">
+    {{ reporter.name }}
+  </li>
+</ul> -->
+
