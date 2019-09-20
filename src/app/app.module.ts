@@ -9,9 +9,11 @@ import { DoctorListComponent } from "./doctor-list/doctor-list.component";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { ApptDetailsComponent } from './appt-details/appt-details.component';
+import { ApptListComponent } from './appt-list/appt-list.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent],
+  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, ApptDetailsComponent, ApptListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
