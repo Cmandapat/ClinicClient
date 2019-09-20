@@ -1,6 +1,8 @@
-<p>doctor-list works!</p>
+
+
 <ul>
   <li *ngFor="let doctor of doctors | async">
-    {{ doctor.name }}
+   <b> {{ doctor.id }}, 
+    {{doctor.name}},{{ doctor.yearsOfExperience }},{{ doctor.leave }}, {{ doctor.leaveDate }}, {{doctor.specialization}} </b>
   </li>
 </ul>
