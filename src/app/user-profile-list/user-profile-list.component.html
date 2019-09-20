@@ -1,0 +1,10 @@
+<!-- <p>user-profile-list works!</p> -->
+<html>
+  <body>
+    <ul>
+      <li *ngFor="let user of users | async">
+        {{ user.name }} - {{user.presentAddress}}
+      </li>
+    </ul>
+  </body>
+</html>
