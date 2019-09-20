@@ -11,6 +11,7 @@ import { UserLoginService } from '../userlogin.service';
 export class UserLoginComponent implements OnInit {
   userInfo:User;
   checkedUser:User;
+  userGrabSuccess:boolean;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -25,12 +26,13 @@ export class UserLoginComponent implements OnInit {
   checkUser(){
     this.userLoginService.getUser(this.checkedUser.id).subscribe( data => {
       this.userInfo = data;
-      if(this.checkedUser.name == this.userInfo.name)
-        alert("Login Successful, redirecting");
-      else
-        alert("Login Unsuccessful, Try a different password");
+      if(this.checkedUser.name == this.userInfo.name){
+        alert("Login Successful");
+        this.router.navigateByUrl('/users');
+      }else{
+        alert("Login Unsuccessful, Perhaps you haven't created an account, or maybe try a different password.");
+      }
     });
-    alert("Login Unsuccessful, are you a new user?");
   }
 
   list(){

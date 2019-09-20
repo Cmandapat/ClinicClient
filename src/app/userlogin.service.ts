@@ -10,7 +10,7 @@ export class UserLoginService {
   constructor(private http: HttpClient) {}
 
   getUser(id: number): Observable<any> {
-     return this.http.get(`${this.baseUrl}/{id}`);
+     return this.http.get(`${this.baseUrl}/${id}`);
   }
   
 }

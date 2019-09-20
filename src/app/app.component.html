@@ -12,12 +12,14 @@
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="login" routerLinkActive="active">Sign In</a>
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="new" routerLinkActive="active">Create Account</a>
                 <!--If the doctors route is active, then display the full array of links-->
-                <a *ngIf="isDoctorsRouteActivated()" routerLink="appointmentform" routerLinkActive="active">Make an Appointment</a>
-                <a *ngIf="isDoctorsRouteActivated()" routerLink="doctors" routerLinkActive="active">Doctors List</a>
-                <a *ngIf="isDoctorsRouteActivated()" routerLink="users" routerLinkActive="active">Users List</a>
+                <a *ngIf="isDoctorsRouteActivated()" routerLink="appointmentlist" routerLinkActive="active">See your Appointments</a>
+                <!-- <a *ngIf="isDoctorsRouteActivated()" routerLink="doctors" routerLinkActive="active">Doctors List</a>
+                <a *ngIf="isDoctorsRouteActivated()" routerLink="users" routerLinkActive="active">Users List</a> -->
                 <!--If the users route is active, then display the appointment form or the list of doctors-->
                 <a *ngIf="isUsersRouteActivated()" routerLink="appointmentform" routerLinkActive="active">Make an Appointment</a>
-                <a *ngIf="isUsersRouteActivated()" routerLink="doctors" routerLinkActive="active">Doctors List</a>
+                <!--If the admin view is active, then display the ability to edit or add a new doctor-->
+                <a *ngIf="isAdminRouteActivated()" routerLink="doctoradd" routerLinkActive="active">Add a New Doctor</a>
+                <a *ngIf="isAdminRouteActivated()" routerLink="doctoredit" routerLinkActive="active">Edit a Current Doctor</a>
             </p>
         </div>
         <router-outlet></router-outlet>
