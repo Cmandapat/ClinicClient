@@ -13,9 +13,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminUpdateDoctorComponent } from './adminUpdateDoctor/adminUpdateDoctor.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent],
+  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent, AdminComponent,AdminUpdateDoctorComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
