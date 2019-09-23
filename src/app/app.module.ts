@@ -11,9 +11,10 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { ApptDetailsComponent } from './appt-details/appt-details.component';
 import { ApptListComponent } from './appt-list/appt-list.component';
+import { CreateApptComponent } from './create-appt/create-appt.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, ApptDetailsComponent, ApptListComponent],
+  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, ApptDetailsComponent, ApptListComponent, CreateApptComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

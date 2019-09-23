@@ -1,6 +1,9 @@
 <p>appt-list works!</p>
 <ul>
     <li *ngFor="let appt of appts | async">
-      {{ appt.apptID }}
+      <!--{{ appt.apptID }} -->
+      <a routerLink="/appointment/{{appt.apptID}}">
+        <span>{{appt.apptID}}</span>
+      </a>
     </li>
   </ul>

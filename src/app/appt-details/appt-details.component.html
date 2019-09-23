@@ -1,1 +1,11 @@
 <p>appt-details works!</p>
+
+ 
+<div *ngIf="appt">
+    <h2>Appointment {{appt.apptID}} Details</h2>
+    <div><span>Doctorid: </span>{{appt.doctorID}}</div>
+    <div><span>Patientid: </span>{{appt.patientID}}</div>
+    <div><span>symptoms: </span>{{appt.symptoms}}</div>
+    <div><span>Appointment Date: </span>{{appt.apptDate}}</div>
+    <div><span>Appointment Time: </span>{{appt.apptTime}}</div>
+    <div>

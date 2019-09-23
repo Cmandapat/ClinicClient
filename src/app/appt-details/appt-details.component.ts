@@ -13,7 +13,7 @@ import {ApptService} from '../appt.service';
 export class ApptDetailsComponent implements OnInit {
   //@Input() appt: Appointment;
   appt: Appointment;
-  id: number;
+  //id: number;
   constructor(
     private route: ActivatedRoute,
     private apptService: ApptService,
@@ -23,25 +23,25 @@ export class ApptDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.appt = new Appointment();
+    this.getAppt();
+    /*this.appt = new Appointment();
 
-    this.id = this.route.snapshot.params["id"];
+    this.id = +this.route.snapshot.params["id"];
 
     this.apptService.getAppt(this.id).subscribe(
       data => {
         this.appt = data;
       },
       error => console.log(error)
-    );
+    ); */
 
   }
 
- /* getAppt(): void {
+  getAppt(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
-  } */
-
+    this.apptService.getAppt(id)
+      .subscribe(appt => this.appt = appt);
+  } 
 
 
 }

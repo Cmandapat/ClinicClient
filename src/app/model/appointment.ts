@@ -4,5 +4,5 @@ export class Appointment {
     patientID: number;
     symptoms: string;
     apptDate: Date;
-    apptTime: any; //have to figure out the datatype for time
+    apptTime: any;
 }

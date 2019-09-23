@@ -21,4 +21,22 @@ export class ApptService {
   getAppt(id: number): Observable<any>{
   return this.http.get(`${this.baseUrl}/${id}`);
   }
+
+createAppt(appt: Appointment): Observable<Appointment> {
+    return this.http.post<Appointment>(this.baseUrl, appt );
+}
+
+
+modifyAppt(appt: Appointment, id: number): Observable<any> {
+  return this.http.put(`${this.baseUrl}/${id}`, appt);
+}
+
+
+
+cancelAppt(id: number):Observable<any>{
+  //might have to add items to this function
+  return this.http.delete(`${this.baseUrl}/${id}`);
+}
+
+
 }
