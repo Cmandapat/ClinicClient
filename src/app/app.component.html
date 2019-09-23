@@ -1,3 +1,6 @@
+
+
+
 <html>
     <head>
        
@@ -20,9 +23,12 @@
                 <!--If the admin view is active, then display the ability to edit or add a new doctor-->
                 <a *ngIf="isAdminRouteActivated()" routerLink="doctoradd" routerLinkActive="active">Add a New Doctor</a>
                 <a *ngIf="isAdminRouteActivated()" routerLink="doctoredit" routerLinkActive="active">Edit a Current Doctor</a>
+                <a routerLink="appointment" routerLinkActive="active">Appointment List</a>
             </p>
         </div>
+      
         <router-outlet></router-outlet>
     </body>
 </html>
+
 
