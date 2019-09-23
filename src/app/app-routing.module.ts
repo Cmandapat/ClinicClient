@@ -4,6 +4,7 @@ import { DoctorListComponent } from "./doctor-list/doctor-list.component";
 
 import { ApptListComponent } from './appt-list/appt-list.component';
 import {ApptDetailsComponent} from './appt-details/appt-details.component';
+import {CreateApptComponent} from './create-appt/create-appt.component';
 
 import { AdminComponent } from "./admin/admin.component";
 import { AdminUpdateDoctorComponent } from './adminUpdateDoctor/adminUpdateDoctor.component';
@@ -18,7 +19,8 @@ const routes: Routes = [{ path: "doctors", component: DoctorListComponent },
                        {path: "admin", component: AdminComponent}, 
                         {path: "adminUpdateDoctor", component: AdminUpdateDoctorComponent },
                         {path: "appointment", component: ApptListComponent},
-                        {path: "appointment/:id", component: ApptDetailsComponent}
+                        {path: "appointment/:id", component: ApptDetailsComponent},
+                        {path: "appointment1/:id", component: CreateApptComponent}
                        ];
 
 

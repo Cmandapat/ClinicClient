@@ -22,8 +22,9 @@ export class ApptService {
   return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-createAppt(appt: Appointment): Observable<Appointment> {
-    return this.http.post<Appointment>(this.baseUrl, appt );
+createAppt(appt: Appointment, id: string): Observable<Appointment> {
+
+    return this.http.post<Appointment>(`${this.baseUrl}/${id}`, appt );
 }
 
 

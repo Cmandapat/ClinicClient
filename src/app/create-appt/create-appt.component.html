@@ -6,5 +6,41 @@
     symptons
     appointment date
     appointment time
+    appointment has to be of 15 minute intervals, 
+    doctor can have appointments from 9-12 and 2-5
 -->
 
+
+
+<div class="container">
+    <h1>Create Appointment</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="doctor">Choose Doctor</label>
+            <select class="form-control"  ng-model="appt.doctorID" name="blah" required>
+                <option *ngFor="let doc of doctors | async" [value]="doc">
+                    {{doc.id}}
+                </option>
+            </select>
+      </div>
+
+      <div class="form-group">
+        <label for="symptoms">Symptoms</label>
+        <input type="text" [(ngModel)] = 'appt.symptoms' class="form-control"  name="blah1">
+      </div>
+
+      <div class="form-group">
+        <label for="apptDate">Appointment Date</label> <br>
+        <input type="date" name="apptDate" [(ngModel)] = 'appt.apptDate' required>
+      </div>
+
+      <div class="form-group">
+        <label for="apptTime">Appointment Time</label> <br>
+        <input type="time" id="appt" name="appt"
+         min="09:00" max="17:00" [(ngModel)] = 'appt.apptTime' required>
+      </div>
+
+      <button class="btn btn-success" (click)="createAppt()">Submit</button>
+
+    </form>
+</div>
