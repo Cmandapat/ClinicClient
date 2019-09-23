@@ -12,13 +12,16 @@ import { Router } from "@angular/router";
 export class UserProfileListComponent implements OnInit {
   users:Observable<User[]>;
   constructor(private userProfileService:UserProfileService,
-              private rotuer: Router) { }
+              private router: Router) { }
   ngOnInit() {
     this.reloadData();
-  }
+  } 
 
   reloadData(){
     this.users = this.userProfileService.getUserProfileList();
   }
 
+  list(){
+    this.router.navigate(["users"]);
+  }
 }

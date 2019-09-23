@@ -3,6 +3,6 @@ export class Appointment {
     doctorID: number;
     patientID: number;
     symptoms: string;
-    apptDate: Date;
+    apptDate: Date; 
     apptTime: any;
 }

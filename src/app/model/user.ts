@@ -1,9 +1,10 @@
 export class User{
-    id: number;
-    name: string; 
-    DOB: Date;
+    id: string;
+    firstName: string; 
+    lastName:string;
+    dob: Date;
     gender: string;
-    presentAddress: string; 
+    presentAddress: string;  
     permanentAddress: string;
     phoneNumber: number;
     emailId: string;
