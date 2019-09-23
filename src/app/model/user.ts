@@ -4,7 +4,7 @@ export class User{
     lastName:string;
     dob: Date;
     gender: string;
-    presentAddress: string; 
+    presentAddress: string;  
     permanentAddress: string;
     phoneNumber: number;
     emailId: string;

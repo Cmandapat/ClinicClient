@@ -14,7 +14,7 @@
                 <!--If no route is active, then only display the Sign In/Create Account option-->
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="login" routerLinkActive="active">Sign In</a>
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="new" routerLinkActive="active">Create Account</a>
-                <!--Universal Link except for first log in-->
+                <!--Universal Link except for first log in--> 
                 <!-- <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="logout" routerLinkActive="active">Log Out</a> -->
                 <!--If the users route is active, then display the appointment making link-->
                 <a *ngIf="isUserRouteActivated()" routerLink="appointmentform" routerLinkActive="active">Make an Appointment</a>

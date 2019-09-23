@@ -10,7 +10,7 @@ describe('UserProfileComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ UserProfileComponent ]
     })
-    .compileComponents();
+    .compileComponents(); 
   }));
 
   beforeEach(() => {

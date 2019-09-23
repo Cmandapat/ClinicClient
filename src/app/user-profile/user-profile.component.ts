@@ -33,7 +33,7 @@ export class UserProfileComponent implements OnInit {
     this.userProfileService.getUserProfile(this.id).subscribe(
       data =>{
         this.user = data;
-        this.userLoginService.getUser(this.id).subscribe( data =>{
+        this.userLoginService.getUser(this.id).subscribe( data =>{ 
           this.checkedUser = data;
           if(this.checkedUser.loginStatus == 1){
               this.firstName = this.user.firstName;

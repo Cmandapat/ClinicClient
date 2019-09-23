@@ -15,7 +15,7 @@ export class UserProfileListComponent implements OnInit {
               private router: Router) { }
   ngOnInit() {
     this.reloadData();
-  }
+  } 
 
   reloadData(){
     this.users = this.userProfileService.getUserProfileList();

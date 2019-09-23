@@ -27,7 +27,7 @@ export class UserLoginComponent implements OnInit {
   checkUser(){
       this.userLoginService.updateLoginStatus(this.userInfo).subscribe(data =>{
         this.checkedUser = data;
-        if(this.checkedUser.loginStatus == 1){
+        if(this.checkedUser.loginStatus == 1){ 
           alert("Login Successful");
           this.router.navigateByUrl(`/user/${this.checkedUser.id}`);
         }else{

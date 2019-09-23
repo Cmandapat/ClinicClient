@@ -8,7 +8,7 @@ import { UserCred } from './model/usercred';
 export class UserLoginService {
   private baseUrl = "http://localhost:8080/api/u/user";
   constructor(private http: HttpClient) {}
-
+ 
   getUser(id: string): Observable<any> {
      return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -19,5 +19,5 @@ export class UserLoginService {
 
   logout(id: string, loggedInUser: UserCred): Observable<any>{
     return this.http.put(`${this.baseUrl}/logout/${id}`, loggedInUser);
-  }
+  } 
 }

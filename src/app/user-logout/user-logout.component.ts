@@ -23,7 +23,7 @@ export class UserLogoutComponent implements OnInit {
   loggedOutUser: UserCred;
 
   ngOnInit() {
-    this.user = new UserCred();
+    this.user = new UserCred(); 
 
     this.id = this.route.snapshot.params["id"];
 
