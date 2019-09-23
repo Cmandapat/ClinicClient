@@ -1,0 +1,16 @@
+body{
+    font-size: 150%;
+    font-weight: bold;
+    background-color: #3e4444;
+}
+
+h1{
+    color:#54B3A3;
+}
+
+a{ 
+    color:#54B3A3;
+    padding: 10px;
+}
+
+a:hover { color:lightblue; }

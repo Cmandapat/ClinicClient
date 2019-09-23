@@ -1,0 +1,8 @@
+<h3> Update a Doctor</h3>
+<form>
+    Doctor ID: <input [(ngModel)] = 'doctor.id' name = 'upid'> <br />
+    Years of Exp<input [(ngModel)] = 'doctor.yearsOfExperience' name = 'upyoe'> <br />
+    specialization <input [(ngModel)] = 'doctor.specialization' name = 'upspecs'> <br />
+    
+    <button (click)="updateDoctor()">Update Doctor</button>
+</form>
