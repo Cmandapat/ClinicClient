@@ -15,7 +15,7 @@ export class UserProfileService {
     return this.http.get(`${this.baseUrl}`);
   }
 
-  getUserProfile(id: number): Observable<any> {
+  getUserProfile(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 }

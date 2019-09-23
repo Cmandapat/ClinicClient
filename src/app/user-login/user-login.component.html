@@ -2,9 +2,9 @@
     <body>
             <h1 align="center">Login to Your Account</h1>
             <form>
-                Name: <input name="name" [(ngModel)]="checkedUser.name"><br>
-                Id: <input name="name" [(ngModel)]="checkedUser.id"><br>
-                <button (click)="checkUser()" >Create</button>
+                Id: <input type="text "name="name" [(ngModel)]="userInfo.id"><br>
+                Password: <input type="password" name="password" [(ngModel)]="userInfo.password"><br>
+                <button (click)="checkUser()" >Login</button>
             </form>
     </body>
 </html>

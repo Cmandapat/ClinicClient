@@ -1,7 +1,8 @@
 export class User{
-    id: number;
-    name: string; 
-    DOB: Date;
+    id: string;
+    firstName: string; 
+    lastName:string;
+    dob: Date;
     gender: string;
     presentAddress: string; 
     permanentAddress: string;
