@@ -35,16 +35,17 @@ id: string = "af4ee02";
 
 
 
-q = new Date();
+q = Date.now();
+/*
 m = this.q.getMonth();
 d = this.q.getDay();
-y = this.q.getFullYear();
+y = this.q.getFullYear(); */
 
 //date: string;
 date2: string;
 
 
-currentDate = this.datePipe.transform(new Date(this.y,this.m,this.d), 'yyyy-MM-dd');
+currentDate = this.datePipe.transform(this.q, 'yyyy-MM-dd');
 
 ValidateDate(date1) {
 
@@ -104,7 +105,7 @@ onSubmit() {
 
 
 
-  this.appt.patientID = "af4ee02";
+  this.appt.patientID = "7dc84ab";
   //this.appt.apptDate = this.datePipe.transform(this.appt.apptDate, "MM-dd-yyyy");
 }
 

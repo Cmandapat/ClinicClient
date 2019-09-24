@@ -28,16 +28,20 @@ export class UserLogoutComponent implements OnInit {
     this.user = new UserCred(); 
 
     this.id = this.route.snapshot.params["id"];
-
+    console.log("logout init");
     this.userLoginService.getAllUser().subscribe( data =>{ 
       this.checkUsers = data;
+      console.log("found checked users");
         for (let index = 0; index < this.checkUsers.length; index++) {
           const element = this.checkUsers[index];
+          console.log("for loop")
           if(element.loginStatus == 1){
+              console.log("login status of 1 found");
               this.anyoneLoggedIn = true;
               this.id = element.id;
               break;
           } else {
+            console.log();
             this.anyoneLoggedIn = false;
           }
         } 
