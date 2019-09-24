@@ -34,7 +34,15 @@ export class AppComponent {
   }
 
   isAnyUserRouteActivatedAfterLogin(): boolean{
-    return ((!(this.location.path().indexOf('/login') > -1)));
+    if(this.areLoginOrCreateActive() || this.isNoRouteActivated()){
+      return false;
+    }else {
+      return true;
+    }
+  }
+
+  areLoginOrCreateActive(): boolean{
+    return ((this.location.path().indexOf('/login') > -1) || (this.location.path().indexOf('/new') > -1));
   }
 
   isNoRouteActivated(): boolean{

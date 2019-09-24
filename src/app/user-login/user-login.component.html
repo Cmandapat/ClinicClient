@@ -1,8 +1,8 @@
 <html>
     <body>
             <h1 align="center">Login to Your Account</h1>
-            <form>
-                Id: <input type="text "name="name" [(ngModel)]="userInfo.id"><br>
+            <form autocomplete="off">
+                Id: <input autocomplete="off" type="text "name="name" [(ngModel)]="userInfo.id"><br>
                 Password: <input type="password" name="password" [(ngModel)]="userInfo.password"><br>
                 <button (click)="checkUser()" >Login</button> 
             </form>

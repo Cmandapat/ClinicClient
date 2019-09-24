@@ -3,7 +3,8 @@ import { Doctor } from '../model/doctor';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from '../admin.service';
 import { Observable } from 'rxjs';
-
+import { UserLoginService } from '../userlogin.service';
+import { UserCred } from '../model/usercred';
 
 @Component({
   selector: 'app-adminUpdateDoctor',
@@ -13,11 +14,34 @@ import { Observable } from 'rxjs';
 export class AdminUpdateDoctorComponent {
 
   doctor:Doctor = new Doctor();
-
+  checkUsers: UserCred[];
+  adminLoggedIn:boolean;
   constructor(private router: Router,
-     private adminService: AdminService,
-      private route: ActivatedRoute) {}
+      private adminService: AdminService,
+      private route: ActivatedRoute,
+      private userLoginService: UserLoginService) {}
 
+  ngOnInit() {
+    this.userLoginService.getAllUser().subscribe( data =>{ 
+    this.checkUsers = data;
+      for (let index = 0; index < this.checkUsers.length; index++) {
+        const element = this.checkUsers[index];
+        if(element.userType == "ADMIN"){
+          if(element.loginStatus == 1){
+            this.adminLoggedIn = true;
+            break;
+          } else {
+          }
+        } else {
+          this.adminLoggedIn = false;
+        }
+      } 
+      if(this.adminLoggedIn == false){
+        alert("You aren't the admin, redirecting")
+        this.router.navigateByUrl("/");
+      }
+    });
+  }
 
   updateDoctor():void
   {

@@ -20,7 +20,7 @@ export class UserLoginService {
     return this.http.put(`${this.baseUrl}/login`, loggedInUser);
   }
 
-  logout(id: string, loggedInUser: UserCred): Observable<any>{
-    return this.http.put(`${this.baseUrl}/logout/${id}`, loggedInUser);
+  logout(id: string): Observable<any>{
+    return this.http.put(`${this.baseUrl}/logout/${id}`, id);
   } 
 }

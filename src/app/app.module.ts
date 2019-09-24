@@ -10,10 +10,6 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { AdminDeleteDoctorComponent } from './admin-delete-doctor/admin-delete-doctor.component';
-
-
-
-
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
