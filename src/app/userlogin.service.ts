@@ -8,6 +8,9 @@ import { UserCred } from './model/usercred';
 export class UserLoginService {
   private baseUrl = "http://localhost:8080/api/u/user";
   constructor(private http: HttpClient) {}
+  getAllUser(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
  
   getUser(id: string): Observable<any> {
      return this.http.get(`${this.baseUrl}/${id}`);
