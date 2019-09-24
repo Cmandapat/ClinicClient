@@ -26,6 +26,7 @@ export class AppComponent {
   isAdminRouteActivated(): boolean{
     return this.location.path().indexOf('/admin') > -1;
   }
+  
  
   isAdminNotHome(): boolean{
     return ((this.location.path().indexOf('/users') > -1) || (this.location.path().indexOf('/doctoradd') > -1) || (this.location.path().indexOf('/doctoredit') > -1)) && (!(this.location.path().indexOf('/admin') > -1));
@@ -40,7 +41,7 @@ export class AppComponent {
     || (this.location.path().indexOf('/user') > -1) || (this.location.path().indexOf('/new') > -1) 
     || (this.location.path().indexOf('/create') > -1) || (this.location.path().indexOf('/login') > -1) 
     || (this.location.path().indexOf('/appointment') > -1) || (this.location.path().indexOf('/doctoredit') > -1) 
-    || (this.location.path().indexOf('/doctoradd') > -1)){
+    || (this.location.path().indexOf('/doctoradd') > -1) || (this.location.path().indexOf('/reporter') > -1)){
         return false;
     }
       else 
