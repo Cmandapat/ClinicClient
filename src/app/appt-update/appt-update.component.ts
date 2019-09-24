@@ -12,7 +12,7 @@ import { Observable } from "rxjs";
   styleUrls: ['./appt-update.component.css']
 })
 export class ApptUpdateComponent implements OnInit {
-  updatedAppt: Appointment = new Appointment();
+  //updatedAppt: Appointment = new Appointment();
   appt: Appointment = new Appointment();
   doctors: Observable<Doctor[]>;
   
@@ -57,5 +57,7 @@ export class ApptUpdateComponent implements OnInit {
     this.appt.symptoms = event;
     //console.log(this.appt.doctorID);
   }  */
+
+  
 
 }

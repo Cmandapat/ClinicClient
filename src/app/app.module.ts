@@ -25,6 +25,7 @@ import { ApptListComponent } from './appt-list/appt-list.component';
 import { CreateApptComponent } from './create-appt/create-appt.component';
 import { ApptUpdateComponent } from './appt-update/appt-update.component';
 
+
 @NgModule({
   declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent, AdminComponent,AdminUpdateDoctorComponent, ApptDetailsComponent, ApptListComponent, CreateApptComponent, ApptUpdateComponent],
 

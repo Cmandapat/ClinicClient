@@ -17,6 +17,7 @@ export class CreateApptComponent implements OnInit {
 doctors: Observable<Doctor[]>;
 appt: Appointment = new Appointment();
 id: string = "af4ee02";
+
 //need the patientID
 //id: any;
   constructor(private doctorService: DoctorService, private apptService: ApptService, 
@@ -28,15 +29,81 @@ id: string = "af4ee02";
   }
 //appt.patientId = "af4ee02";
 
+
+
+//myDate = new Date();
+
+
+
+q = new Date();
+m = this.q.getMonth();
+d = this.q.getDay();
+y = this.q.getFullYear();
+
+//date: string;
+date2: string;
+
+
+currentDate = this.datePipe.transform(new Date(this.y,this.m,this.d), 'yyyy-MM-dd');
+
+ValidateDate(date1) {
+
+  alert(this.currentDate);
+  alert(date1);
+  //console.log(date);
+  //console.log(mydate)
+
+  if(this.currentDate > date1)
+  {
+      alert("greater");
+      return false;
+  }
+  else
+  {
+    
+      alert("smaller");
+      return true;
+
+
+  }
+
+
+}
+
+
+
 createAppt(){
+  this.date2 = this.datePipe.transform(this.appt.apptDate, "yyyy-MM-dd");
+  
+//if the date is before today's date return back to form
+if(this.ValidateDate(this.date2) == true){
+  //do nothing
   this.apptService.createAppt(this.id, this.appt).subscribe(data =>{
     alert("Appointment Created Successfully!");
   }
-  );
+  )
+} 
+else {
+alert("Pick a date that's current");
+return
+}
+
 }
 
 onSubmit() {
   alert("Doctor id:" +this.appt.doctorID);
+
+
+ 
+//fix this so date2 is in that format not apptDate
+
+
+  
+
+
+
+
+
   this.appt.patientID = "af4ee02";
   //this.appt.apptDate = this.datePipe.transform(this.appt.apptDate, "MM-dd-yyyy");
 }
