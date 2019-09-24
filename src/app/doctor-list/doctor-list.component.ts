@@ -13,11 +13,13 @@ import { UserCred } from '../model/usercred';
 })
 export class DoctorListComponent implements OnInit {
   doctors: Observable<Doctor[]>;
+
   checkUsers: UserCred[];
   adminLoggedIn: boolean;
   constructor(private doctorService: DoctorService, 
               private router: Router,
               private userLoginService: UserLoginService) {}
+
 
   ngOnInit() {
     this.userLoginService.getAllUser().subscribe( data =>{ 
