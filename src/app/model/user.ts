@@ -1,11 +1,12 @@
 export class User{
-    id: string;
+    userID: string;
     firstName: string; 
     lastName:string;
-    dob: Date;
+    dob: any;
     gender: string;
     presentAddress: string;  
     permanentAddress: string;
     phoneNumber: number;
     emailId: string;
+    password: string;
 }
