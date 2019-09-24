@@ -36,10 +36,8 @@ const routes: Routes = [{ path: "doctors", component: DoctorListComponent },
                         {path: "adminDeleteDoctor", component: AdminDeleteDoctorComponent },
                         {path: "appointment", component: ApptListComponent},
                         {path: "appointment/:id", component: ApptDetailsComponent},
-
                         {path: "appointment1", component: CreateApptComponent},
-                        {path: "appointment2/:id", component: ApptUpdateComponent}
-
+                        {path: "appointment2/:id", component: ApptUpdateComponent},
                         {path: "reporter", component: ReporterComponent},
                         {path: "logout", component: UserLogoutComponent}
 

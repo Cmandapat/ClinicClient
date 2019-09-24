@@ -1,9 +1,13 @@
-<p>appt-list works!</p>
-<ul>
-    <li *ngFor="let appt of appts | async">
-      <!--{{ appt.apptID }} -->
-      <a routerLink="/appointment/{{appt.apptID}}">
-        <span>{{appt.apptID}}</span>
-      </a>
-    </li>
-  </ul>
+<html>
+  <body>
+    <h2>Appointments:</h2>
+    <ul>
+      <li *ngFor="let appt of appts | async">
+        <!--{{ appt.apptID }} -->
+        <a routerLink="/appointment/{{appt.apptID}}">
+          <span>{{appt.apptID}}</span>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
