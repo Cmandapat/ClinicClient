@@ -17,39 +17,18 @@ const httpOptions = {
 @Injectable({
     providedIn: "root"
   })
-  export class AdminService {
+  export class ReporterService {
     private baseUrl = "http://localhost:8080/api/d/"; 
 
     constructor(private http: HttpClient) {}
   
     //Rest Methods
   
-    getAppointments(): Observable<any> {
-        return this.http.get(`${this.baseUrl}/appt`);
-    }
-
-     createDoc(doctor: Doctor): Observable<any> {
-        return this.http.post<Doctor>(`${this.baseUrl}/doctors`, doctor);
-    }
 
      updateDoctor(doctor:Doctor): Observable<any>
      {
-       return this.http.put<Doctor>(`${this.baseUrl}doctors/${doctor.id}`,doctor);
+       return this.http.put<Doctor>(`${this.baseUrl}/doctors/reporter/${doctor.id}`,doctor);
      }
-
-     deleteDoctor(doctor:Doctor): Observable<any>
-     {
-        
-       return this.http.delete<Doctor>(`${this.baseUrl}doctors/${doctor.id}`);
-     }
-
-
-
-
-
-
-
-
 
 
 

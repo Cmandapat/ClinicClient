@@ -1,14 +1,17 @@
 <html>
     <body>
         <h1 align="center">Create a new Profile!</h1>
-        <form>
-            Name: <input name="name" [(ngModel)]="user.name"><br>
-            DOB: <input name="date" type="date" [(ngModel)]="user.date"><br>
+        <form autocomplete="off">
+            First Name: <input name="firstname" [(ngModel)]="user.firstName"><br>
+            Last Name: <input name="lastname" [(ngModel)]="user.lastName"><br>
+            DOB: <input name="date" type="date" [(ngModel)]="user.dob"><br>
+            <h2>{{user.date}}</h2>
             Gender: <input type="radio" [(ngModel)]="user.gender" name="gender" value="male" checked> Male <br>
                     <input type="radio" [(ngModel)]="user.gender" name="gender" value="female"> Female <br> 
             Current Address: <input name="currAdd" [(ngModel)]="user.presentAddress"><br>
             Permanent Address: <input name="permAdd" [(ngModel)]="user.permanentAddress"><br>
             EmailID: <input name="email" [(ngModel)]="user.emailId"><br>
+            Password: <input autocomplete="off" name="password" [(ngModel)]="user.password"><br>
             <button (click)="createUser()">Create</button>
         </form>
     </body>

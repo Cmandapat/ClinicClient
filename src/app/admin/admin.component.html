@@ -1,7 +1,9 @@
 <h3> Create a new Doctor</h3>
 <form>
-Doctor Name: <input [(ngModel)] = 'doctor.name' name = 'docname'> <br />
+Doctor's First Name: <input [(ngModel)] = 'doctor.firstName' name = 'docname'> <br />
+Doctor's Last Name: <input [(ngModel)] = 'doctor.lastName' name = 'docname'> <br />
 Years of Exp<input [(ngModel)] = 'doctor.yearsOfExperience' name = 'docyoe'> <br />
 specialization <input [(ngModel)] = 'doctor.specialization' name = 'docspecs'> <br />
 
 <button (click)="createDoctor()">Add Doctor</button>
+

@@ -1,8 +1,10 @@
 export class Doctor {
   id: number;
-  name: string;
-  yearsOfExperience: number;
+  firstName: string;
+  lastName: string;
   specialization: string;
+  yearsOfExperience: number;
   leave: number;
-  leaveDate: Date;
+  leaveStartDate: string;
+  leaveEndDate: string;
 }

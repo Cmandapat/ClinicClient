@@ -2,7 +2,8 @@
   <body>
     <ul>
       <li *ngFor="let doctor of doctors | async">
-        <span>{{ doctor.name }} - Specialization: {{doctor.specialization}}</span>
+        <span>Doctor Name:{{ doctor.firstName }} {{ doctor.lastName }} - Specialization: {{doctor.specialization}}</span> <br>
+        <span>Doctor Years Of Experience: {{ doctor.yearsOfExperience }}</span>
       </li>
     </ul>
   </body>

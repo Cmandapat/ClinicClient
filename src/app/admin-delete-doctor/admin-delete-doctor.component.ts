@@ -1,30 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from '../model/doctor';
-import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from '../admin.service';
-import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserLoginService } from '../userlogin.service';
 import { UserCred } from '../model/usercred';
-
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-admin-delete-doctor',
+  templateUrl: './admin-delete-doctor.component.html',
+  styleUrls: ['./admin-delete-doctor.component.css']
 })
-export class AdminComponent {
-
-  doctor:Doctor = new Doctor();
-  checkUsers: UserCred[];
-  adminLoggedIn:boolean;
-
-  constructor(private router: Router,
-     private adminService: AdminService,
-      private route: ActivatedRoute,
-      private userLoginService: UserLoginService) {}
+export class AdminDeleteDoctorComponent implements OnInit {
+doctor:Doctor = new Doctor();
+checkUsers: UserCred[];
+adminLoggedIn:boolean;
+  constructor(private adminService: AdminService,
+              private router: Router,
+              private userLoginService: UserLoginService) { 
+    
+  }
 
   ngOnInit() {
     this.userLoginService.getAllUser().subscribe( data =>{ 
-    this.checkUsers = data;
+      this.checkUsers = data;
       for (let index = 0; index < this.checkUsers.length; index++) {
         const element = this.checkUsers[index];
         if(element.userType == "ADMIN"){
@@ -44,21 +41,13 @@ export class AdminComponent {
     });
   }
 
-  updateDoctor():void
+  deleteDoctor():void
   {
-     this.adminService.updateDoctor(this.doctor).subscribe( data => 
+   // this.doctors = this.adminService.updateDoctor(this.doctor);
+        this.adminService.deleteDoctor(this.doctor).subscribe( data => 
          {
-           alert("Update Successful")
+           alert("doctor has been Deleted Successfully");
          })
       
   }
-  createDoctor(): void {
-    //let doctor:Doctor = new Doctor();
-    this.adminService.createDoc(this.doctor).subscribe( data => {
-      alert("Doctor successfully created");
-    });
-
-  };    
-
-
 }
