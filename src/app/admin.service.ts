@@ -37,6 +37,12 @@ const httpOptions = {
        return this.http.put<Doctor>(`${this.baseUrl}/doctors/${doctor.id}`,doctor);
      }
 
+     deleteDoctor(doctor:Doctor): Observable<any>
+     {
+        
+       return this.http.delete<Doctor>(`${this.baseUrl}doctors/${doctor.id}`);
+     }
+
 
 
 

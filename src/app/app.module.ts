@@ -9,7 +9,7 @@ import { DoctorListComponent } from "./doctor-list/doctor-list.component";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
-
+import { AdminDeleteDoctorComponent } from './admin-delete-doctor/admin-delete-doctor.component';
 
 
 
@@ -24,9 +24,10 @@ import { ApptDetailsComponent } from './appt-details/appt-details.component';
 import { ApptListComponent } from './appt-list/appt-list.component';
 import { CreateApptComponent } from './create-appt/create-appt.component';
 import { UserLogoutComponent } from './user-logout/user-logout.component';
+import { AdminGetDoctorSpecComponent } from './admin-get-doctor-spec/admin-get-doctor-spec.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent, AdminComponent,AdminUpdateDoctorComponent, ApptDetailsComponent, ApptListComponent, CreateApptComponent, UserLogoutComponent],
+  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent, AdminComponent,AdminUpdateDoctorComponent, ApptDetailsComponent, ApptListComponent, CreateApptComponent, UserLogoutComponent, AdminDeleteDoctorComponent, AdminGetDoctorSpecComponent],
 
   imports: [
     BrowserModule,

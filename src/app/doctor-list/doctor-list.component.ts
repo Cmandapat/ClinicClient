@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 })
 export class DoctorListComponent implements OnInit {
   doctors: Observable<Doctor[]>;
+
   constructor(private doctorService: DoctorService, private router: Router) {}
 
   ngOnInit() {
