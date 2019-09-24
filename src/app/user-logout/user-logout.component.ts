@@ -21,17 +21,36 @@ export class UserLogoutComponent implements OnInit {
   id: string;
   user: UserCred;
   loggedOutUser: UserCred;
+  checkUsers: UserCred[];
+  anyoneLoggedIn:boolean;
 
   ngOnInit() {
     this.user = new UserCred(); 
 
     this.id = this.route.snapshot.params["id"];
 
-    this.userLoginService.logout(this.id, this.user).subscribe(
-      data =>{
-        this.loggedOutUser = data;
-            this.router.navigateByUrl("/");        
-    });
+    this.userLoginService.getAllUser().subscribe( data =>{ 
+      this.checkUsers = data;
+        for (let index = 0; index < this.checkUsers.length; index++) {
+          const element = this.checkUsers[index];
+          if(element.loginStatus == 1){
+              this.anyoneLoggedIn = true;
+              this.id = element.id;
+              break;
+          } else {
+            this.anyoneLoggedIn = false;
+          }
+        } 
+        if(this.anyoneLoggedIn == false){
+          alert("No One is logged in, sorry.")
+          this.router.navigateByUrl("/");
+        }
+        this.userLoginService.logout(this.id).subscribe(
+          data =>{
+            this.loggedOutUser = data;
+                this.router.navigateByUrl("/");        
+        });
+      });
   }
 
   list(){
