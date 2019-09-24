@@ -1,16 +1,4 @@
-<p>create-appt works!</p>
-
-<!--begin form here
-    don't need appointmentID, we'll get doctor id by doctor name?
-    get patientID by patient logging in?
-    symptons
-    appointment date
-    appointment time
-    appointment has to be of 15 minute intervals, 
-    doctor can have appointments from 9-12 and 2-5
--->
-
-
+<p>appt-update works!</p>
 
 <div class="container">
     <h1>Create Appointment</h1>
@@ -41,7 +29,7 @@
          min="09:00" max="17:00" [(ngModel)] = 'appt.apptTime' required>
       </div>
 
-      <button class="btn btn-success" (click)="createAppt()">Submit</button>
+      <button class="btn btn-success" (click)="updateAppt()">Submit</button>
 
     </form>
 </div>

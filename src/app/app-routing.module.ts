@@ -11,6 +11,7 @@ import { AdminUpdateDoctorComponent } from './adminUpdateDoctor/adminUpdateDocto
 import { UserProfileListComponent } from "./user-profile-list/user-profile-list.component";
 import { UserCreateComponent } from "./user-create/user-create.component"
 import { UserLoginComponent } from './user-login/user-login.component';
+import { ApptUpdateComponent } from './appt-update/appt-update.component';
 //Routing for Angular app is configured in array of Routes, input so the router knows which component to display
 const routes: Routes = [{ path: "doctors", component: DoctorListComponent }, 
                         {path:"users", component: UserProfileListComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [{ path: "doctors", component: DoctorListComponent },
                         {path: "adminUpdateDoctor", component: AdminUpdateDoctorComponent },
                         {path: "appointment", component: ApptListComponent},
                         {path: "appointment/:id", component: ApptDetailsComponent},
-                        {path: "appointment1/:id", component: CreateApptComponent}
+                        {path: "appointment1", component: CreateApptComponent},
+                        {path: "appointment2/:id", component: ApptUpdateComponent}
                        ];
 
 

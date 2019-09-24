@@ -16,7 +16,7 @@ import { DatePipe } from '@angular/common';
 export class CreateApptComponent implements OnInit {
 doctors: Observable<Doctor[]>;
 appt: Appointment = new Appointment();
-
+id: string = "af4ee02";
 //need the patientID
 //id: any;
   constructor(private doctorService: DoctorService, private apptService: ApptService, 
@@ -27,19 +27,27 @@ appt: Appointment = new Appointment();
     this.doctors = this.doctorService.getDoctorsList();
   }
 //appt.patientId = "af4ee02";
- id =  "af4ee02";
 
 createAppt(){
-  this.apptService.createAppt(this.appt, this.id).subscribe(data =>{
+  this.apptService.createAppt(this.id, this.appt).subscribe(data =>{
     alert("Appointment Created Successfully!");
   }
   );
 }
 
 onSubmit() {
-  this.appt.apptDate = this.datePipe.transform(this.appt.apptDate, "MM-dd-yyyy");
+  alert("Doctor id:" +this.appt.doctorID);
+  this.appt.patientID = "af4ee02";
+  //this.appt.apptDate = this.datePipe.transform(this.appt.apptDate, "MM-dd-yyyy");
 }
 
+
+
+onChange(event) {
+  if (this.appt.doctorID === event) return;
+  this.appt.doctorID = event;
+  console.log(this.appt.doctorID);
+}
 
 
 

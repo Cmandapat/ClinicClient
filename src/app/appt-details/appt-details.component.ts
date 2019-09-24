@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 //import {Location} from '@angular/common';
 import {Appointment} from '../model/appointment';
 import {ApptService} from '../appt.service';
@@ -18,6 +18,7 @@ export class ApptDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private apptService: ApptService,
     //private location: Location;
+    private router: Router
 
   ) { }
 
@@ -42,6 +43,12 @@ export class ApptDetailsComponent implements OnInit {
     this.apptService.getAppt(id)
       .subscribe(appt => this.appt = appt);
   } 
+
+
+  routeToEdit() : void {
+    this.router.navigateByUrl(`/appointment2/${this.appt.apptID}`);
+  }
+
 
 
 }

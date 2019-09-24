@@ -11,6 +11,8 @@ export class ApptService {
   //look out for this
   private baseUrl = "http://localhost:8080/api/a/appointment";
 
+  //private baseUrl1 = "http://localhost:8080/api/a/appointment1";
+
 
   constructor(private http: HttpClient) { }
 
@@ -21,14 +23,14 @@ export class ApptService {
   getAppt(id: number): Observable<any>{
   return this.http.get(`${this.baseUrl}/${id}`);
   }
+  
+createAppt(id: string, appt: Appointment): Observable<any> {
 
-createAppt(appt: Appointment, id: string): Observable<Appointment> {
-
-    return this.http.post<Appointment>(`${this.baseUrl}/${id}`, appt );
+    return this.http.post(`${this.baseUrl}/${id}`, appt );
 }
 
 
-modifyAppt(appt: Appointment, id: number): Observable<any> {
+modifyAppt(id: number, appt: Appointment ): Observable<any> {
   return this.http.put(`${this.baseUrl}/${id}`, appt);
 }
 
