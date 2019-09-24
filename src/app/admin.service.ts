@@ -34,7 +34,7 @@ const httpOptions = {
 
      updateDoctor(doctor:Doctor): Observable<any>
      {
-       return this.http.put<Doctor>(`${this.baseUrl}/doctors/${doctor.id}`,doctor);
+       return this.http.put<Doctor>(`${this.baseUrl}doctors/${doctor.id}`,doctor);
      }
 
      deleteDoctor(doctor:Doctor): Observable<any>

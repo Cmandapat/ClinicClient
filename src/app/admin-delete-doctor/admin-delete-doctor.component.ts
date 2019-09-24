@@ -22,7 +22,7 @@ doctor:Doctor = new Doctor();
    // this.doctors = this.adminService.updateDoctor(this.doctor);
         this.adminService.deleteDoctor(this.doctor).subscribe( data => 
          {
-           alert(this.doctor.firstName + " " + this.doctor.lastName + " has been Deleted Successfully")
+           alert("doctor has been Deleted Successfully");
          })
       
   }
