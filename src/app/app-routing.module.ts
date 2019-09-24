@@ -12,6 +12,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserCreateComponent } from "./user-create/user-create.component"
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserLogoutComponent } from './user-logout/user-logout.component';
+import {ReporterComponent } from  './reporter/reporter.component'
 //Routing for Angular app is configured in array of Routes, input so the router knows which component to display
 const routes: Routes = [{ path: "doctors", component: DoctorListComponent }, 
                         {path:"users", component: UserProfileListComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [{ path: "doctors", component: DoctorListComponent },
                         {path: "admin", component: AdminComponent}, 
                         {path: "adminUpdateDoctor", component: AdminUpdateDoctorComponent },
                         {path: "appointment", component: ApptListComponent},
-                        {path: "appointment/:id", component: ApptDetailsComponent}
+                        {path: "appointment/:id", component: ApptDetailsComponent},
+                        { path: "reporter", component: ReporterComponent }
                        ];
 
 

@@ -24,9 +24,23 @@ import { ApptDetailsComponent } from './appt-details/appt-details.component';
 import { ApptListComponent } from './appt-list/appt-list.component';
 import { CreateApptComponent } from './create-appt/create-appt.component';
 import { UserLogoutComponent } from './user-logout/user-logout.component';
+import { ReporterComponent } from './reporter/reporter.component';
 
 @NgModule({
-  declarations: [AppComponent, DoctorDetailsComponent, DoctorListComponent, UserProfileComponent, UserProfileListComponent, UserCreateComponent, UserLoginComponent, AdminComponent,AdminUpdateDoctorComponent, ApptDetailsComponent, ApptListComponent, CreateApptComponent, UserLogoutComponent],
+  declarations: [AppComponent, 
+    DoctorDetailsComponent, 
+    DoctorListComponent, 
+    UserProfileComponent, 
+    UserProfileListComponent, 
+    UserCreateComponent, 
+    UserLoginComponent, 
+    AdminComponent,
+    AdminUpdateDoctorComponent, 
+    ApptDetailsComponent, 
+    ApptListComponent, 
+    CreateApptComponent, 
+    UserLogoutComponent, 
+    ReporterComponent],
 
   imports: [
     BrowserModule,
