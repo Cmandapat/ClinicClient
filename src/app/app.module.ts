@@ -9,7 +9,15 @@ import { DoctorListComponent } from "./doctor-list/doctor-list.component";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
+
+import { DatePipe } from '@angular/common';
+
+
+
+
+
 import { AdminDeleteDoctorComponent } from './admin-delete-doctor/admin-delete-doctor.component';
+
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
@@ -19,6 +27,11 @@ import { AdminUpdateDoctorComponent } from './adminUpdateDoctor/adminUpdateDocto
 import { ApptDetailsComponent } from './appt-details/appt-details.component';
 import { ApptListComponent } from './appt-list/appt-list.component';
 import { CreateApptComponent } from './create-appt/create-appt.component';
+
+import { ApptUpdateComponent } from './appt-update/appt-update.component';
+
+
+
 import { UserLogoutComponent } from './user-logout/user-logout.component';
 import { ReporterComponent } from './reporter/reporter.component';
 import { AdminGetDoctorSpecComponent } from './admin-get-doctor-spec/admin-get-doctor-spec.component';
@@ -39,7 +52,8 @@ import { AdminGetDoctorSpecComponent } from './admin-get-doctor-spec/admin-get-d
     UserLogoutComponent, 
     ReporterComponent,
     AdminDeleteDoctorComponent, 
-    AdminGetDoctorSpecComponent],
+    AdminGetDoctorSpecComponent,
+          ApptUpdateComponent],
 
 
   imports: [
@@ -49,9 +63,10 @@ import { AdminGetDoctorSpecComponent } from './admin-get-doctor-spec/admin-get-d
     HttpClientModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    //DatePipe
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

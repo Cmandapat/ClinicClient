@@ -14,6 +14,10 @@
                 <!--If no route is active, then only display the Sign In/Create Account option-->
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="login" routerLinkActive="active">Sign In</a>
                 <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="new" routerLinkActive="active">Create Account</a>
+
+                <a routerLink="appointment" routerLinkActive="active">Appointment List</a>
+                <a routerLink="appointment1" routerLinkActive="active">Appointment Form</a>
+
                 <!--Universal Link except for first log in--> 
                 <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="logout" routerLinkActive="active">Log Out</a>
                 <!-- If the users route is active, then display the appointment making link -->
@@ -29,10 +33,12 @@
                 <a *ngIf="isAdminRouteActivated()" routerLink="adminUpdateDoctor" routerLinkActive="active">Edit a Current Doctor</a>
                 <a *ngIf="isAdminRouteActivated()" routerLink="adminDeleteDoctor" routerLinkActive="active">Yeet a Current Doctor</a>
 
+
                 
             </p>
         </div>
-      
+        <!--remember to do routing for this-->
+        
         <router-outlet></router-outlet>
     </body>
 </html>

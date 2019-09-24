@@ -1,8 +1,11 @@
+import {Doctor} from './doctor';
+
+
 export class Appointment {
     apptID: number;
     doctorID: number;
-    patientID: number;
+    patientID: string;
     symptoms: string;
-    apptDate: Date; 
+    apptDate: any;
     apptTime: any;
 }

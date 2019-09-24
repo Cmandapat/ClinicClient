@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-//import {Location} from '@angular/common';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Location} from '@angular/common';
 import {Appointment} from '../model/appointment';
 import {ApptService} from '../appt.service';
 
@@ -17,7 +17,8 @@ export class ApptDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apptService: ApptService,
-    //private location: Location;
+    private location: Location,
+    private router: Router
 
   ) { }
 
@@ -42,6 +43,29 @@ export class ApptDetailsComponent implements OnInit {
     this.apptService.getAppt(id)
       .subscribe(appt => this.appt = appt);
   } 
+
+
+  routeToEdit() : void {
+    this.router.navigateByUrl(`/appointment2/${this.appt.apptID}`);
+  }
+
+  //need to delete and redirect back to home page
+
+  /*lastLocation() : void {
+    this.deleteAppt();
+    this.location.back();
+  } */
+
+
+
+  deleteAppt() : void {
+    this.apptService.cancelAppt(this.appt.apptID).subscribe(data =>{
+      alert("Appointment Cancelled Successfully");
+      alert("apptID:"+this.appt.apptID);
+    }
+    );
+    this.location.back();
+  }
 
 
 }
