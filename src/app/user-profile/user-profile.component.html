@@ -2,6 +2,13 @@
 <html>
   <body>
         <h3>Welcome, {{firstName }} {{lastName}} </h3>
+        <hr>
+        <h3>Doctors:</h3>
+        <ul>
+          <li *ngFor="let doctor of doctors | async">
+            <span>{{doctor.firstName}} {{doctor.lastName}} - Specialization: {{doctor.specialization}}</span>
+          </li>
+        </ul>
   </body>
 </html>
  
