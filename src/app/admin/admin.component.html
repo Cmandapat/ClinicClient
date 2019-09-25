@@ -1,9 +1,20 @@
-<h3> Create a new Doctor</h3>
+<h3>Create a new Doctor</h3>
 <form>
-Doctor's First Name: <input [(ngModel)] = 'doctor.firstName' name = 'docname'> <br />
-Doctor's Last Name: <input [(ngModel)] = 'doctor.lastName' name = 'docname'> <br />
-Years of Exp<input [(ngModel)] = 'doctor.yearsOfExperience' name = 'docyoe'> <br />
-specialization <input [(ngModel)] = 'doctor.specialization' name = 'docspecs'> <br />
-
-<button (click)="createDoctor()">Add Doctor</button>
-
+  Doctor's First Name: <input [(ngModel)]="doctor.firstName" name="docname" />
+  <br />
+  Doctor's Last Name: <input [(ngModel)]="doctor.lastName" name="docname" />
+  <br />
+  Years of Exp<input [(ngModel)]="doctor.yearsOfExperience" name="docyoe" />
+  <br />
+  specialization
+  <select [(ngModel)]="doctor.specialization" name="docspecs">
+    <option>Dermatologist</option>
+    <option>Family Physician</option>
+    <option>Obstetricians and Gynecologist </option>
+    <option>Ophthalmologist </option>
+    <option>Pediatrician</option>
+    <option>Sports Medicine Specialists </option>
+  </select>
+  <br />
+  <button (click)="createDoctor()">Add Doctor</button>
+</form>
