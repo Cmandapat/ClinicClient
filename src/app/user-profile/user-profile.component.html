@@ -4,14 +4,24 @@
     <h3>Welcome, {{ firstName }} {{ lastName }}</h3>
     <hr />
     <h3>Doctors:</h3>
-    <ul>
-      <li *ngFor="let doctor of doctors | async">
-        <span
-          >{{ doctor.firstName }} {{ doctor.lastName }} - Specialization:
-          {{ doctor.specialization }}</span
-        >
-      </li>
-    </ul>
+    <div class="container">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Doctor</th>
+            <th>Specialization</th>
+            <th>Years Of Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doctor of doctors | async">
+            <td>{{ doctor.firstName }} {{ doctor.lastName }}</td>
+            <td>{{ doctor.specialization }}</td>
+            <td>{{ doctor.yearsOfExperience }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div *ngIf="hasAppointment; else noAppointment">
       <app-appt-details></app-appt-details>
