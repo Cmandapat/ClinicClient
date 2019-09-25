@@ -60,7 +60,7 @@
           >Delete Doctor</a
         >
         <a
-          *ngIf="isAnyUserRouteActivatedAfterLogin()"
+          *ngIf="doShowAppointment()"
           routerLink="appointment1"
           routerLinkActive="active"
           >Make Appointment</a

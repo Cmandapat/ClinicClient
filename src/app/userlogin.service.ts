@@ -10,6 +10,8 @@ export class UserLoginService {
   constructor(private http: HttpClient) {}
 
   userId: string;
+  adminLoggedIn: boolean;
+  user: UserCred;
   getAllUser(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
@@ -20,6 +22,14 @@ export class UserLoginService {
 
   updateLoginStatus(loggedInUser: UserCred): Observable<any> {
     this.userId = loggedInUser.id;
+    this.getUser(this.userId).subscribe( data =>{
+      this.user = data;
+      if(this.user.userType == "ADMIN"){
+        this.adminLoggedIn = true;
+      }
+      else 
+        this.adminLoggedIn = true;
+    });
     console.log(this.userId);
     return this.http.put(`${this.baseUrl}/login`, loggedInUser);
   }
