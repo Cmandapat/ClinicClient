@@ -29,9 +29,11 @@ export class AppComponent {
   
  
   isAdminNotHome(): boolean{
-    return ((this.location.path().indexOf('/users') > -1) || (this.location.path().indexOf('/doctoradd') > -1) 
+    if (((this.location.path().indexOf('/users') > -1) || (this.location.path().indexOf('/doctoradd') > -1) 
     || (this.location.path().indexOf('/doctoredit') > -1) || (this.location.path().indexOf('/appointment') > -1)) 
-    && (!(this.location.path().indexOf('/admin') > -1));
+    && (!(this.location.path().indexOf('/admin') > -1))){
+      return true;
+    }
   }
 
   isAnyUserRouteActivatedAfterLogin(): boolean{
