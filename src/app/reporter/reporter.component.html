@@ -1,14 +1,29 @@
-
-<ul> Doctor
-  <li *ngFor="let doctor of doctors | async">
-    <span>ID: {{ doctor.id }} - {{ doctor.lastName }}, {{ doctor.firstName }}  {{doctor.leaveStartDate}} {{ doctor.leaveEndDate }}</span>
-  </li>
-</ul>
-<form>
-  Doctor ID<input [(ngModel)] = 'doctor.id' name = 'id'><br>
-  Leave<input [(ngModel)] = 'doctor.leave' name = 'leave'><br>
-  Leave Start Date<input [(ngModel)] = 'doctor.leaveStartDate' name = 'startdate'><br>
-  Leave End Date<input [(ngModel)] = 'doctor.leaveEndDate' name = 'enddate'><br>
-  <button (click)="updateDoctor()">Update Doctor Leave</button>
-</form>
-
+<html>
+  <body>
+    <ul>
+      Doctor
+      <li *ngFor="let doctor of doctors | async">
+        <span
+          >ID: {{ doctor.id }} - {{ doctor.lastName }}, {{ doctor.firstName }}
+          {{ doctor.leaveStartDate }} {{ doctor.leaveEndDate }}</span
+        >
+      </li>
+    </ul>
+    <form>
+      Doctor ID<input [(ngModel)]="doctor.id" name="id" /><br />
+      Leave Start Date<input
+        type="date"
+        [(ngModel)]="doctor.leaveStartDate"
+        name="startdate"
+        required
+      /><br />
+      Leave End Date<input
+        type="date"
+        [(ngModel)]="doctor.leaveEndDate"
+        name="enddate"
+        required
+      /><br />
+      <button (click)="updateDoctor()">Update Doctor Leave</button>
+    </form>
+  </body>
+</html>

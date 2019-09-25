@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Location} from '@angular/common';
-import {Appointment} from '../model/appointment';
-import {ApptService} from '../appt.service';
-
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Location } from "@angular/common";
+import { Appointment } from "../model/appointment";
+import { ApptService } from "../appt.service";
 
 @Component({
-  selector: 'app-appt-details',
-  templateUrl: './appt-details.component.html',
-  styleUrls: ['./appt-details.component.css']
+  selector: "app-appt-details",
+  templateUrl: "./appt-details.component.html",
+  styleUrls: ["./appt-details.component.css"]
 })
 export class ApptDetailsComponent implements OnInit {
   //@Input() appt: Appointment;
@@ -18,34 +17,46 @@ export class ApptDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private apptService: ApptService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    private appointmentService: ApptService
+  ) {}
 
-  ) { }
+  id: string;
+  firstName: string;
+  lastName: string;
+  apptDate: string;
+  apptTime: string;
+  symptoms: string;
+  hasAppointment: boolean;
+  doctorFirstName: string;
+  doctorLastName: string;
+  doctorSpecialization: string;
+  doctorYearsofExperience: number;
+  doctorOnLeave: number;
+  needDoctor: boolean;
 
   ngOnInit(): void {
-    
-    this.getAppt();
-    /*this.appt = new Appointment();
-
-    this.id = +this.route.snapshot.params["id"];
-
-    this.apptService.getAppt(this.id).subscribe(
-      data => {
-        this.appt = data;
-      },
-      error => console.log(error)
-    ); */
-
+    this.id = this.route.snapshot.params["id"];
+    this.appointmentService.getAppt(this.id).subscribe(result => {
+      if (result) {
+        const response = result as string;
+        const parsedResponse = JSON.parse(response);
+        this.apptDate = parsedResponse.apptDate;
+        this.apptTime = parsedResponse.apptTime;
+        this.symptoms = parsedResponse.symptoms;
+        this.doctorFirstName = parsedResponse.doctor.firstName;
+        this.doctorLastName = parsedResponse.doctor.lastName;
+        this.doctorSpecialization = parsedResponse.doctor.specialization;
+        this.doctorYearsofExperience = parsedResponse.doctor.yearsOfExperience;
+        this.doctorOnLeave = parsedResponse.doctor.leave;
+        if (this.doctorOnLeave == null) {
+          this.needDoctor = true;
+        }
+      }
+    });
   }
 
-  getAppt(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.apptService.getAppt(id)
-      .subscribe(appt => this.appt = appt);
-  } 
-
-
-  routeToEdit() : void {
+  routeToEdit(): void {
     this.router.navigateByUrl(`/appointment2/${this.appt.apptID}`);
   }
 
@@ -56,16 +67,11 @@ export class ApptDetailsComponent implements OnInit {
     this.location.back();
   } */
 
-
-
-  deleteAppt() : void {
-    this.apptService.cancelAppt(this.appt.apptID).subscribe(data =>{
+  deleteAppt(): void {
+    this.apptService.cancelAppt(this.appt.apptID).subscribe(data => {
       alert("Appointment Cancelled Successfully");
-      alert("apptID:"+this.appt.apptID);
-    }
-    );
+      alert("apptID:" + this.appt.apptID);
+    });
     this.location.back();
   }
-
-
 }

@@ -10,7 +10,7 @@ export class UserProfileService {
 
   //Rest Methods
 
-  getUserProfileList(): Observable<any> { 
+  getUserProfileList(): Observable<any> {
     console.log("hello");
     return this.http.get(`${this.baseUrl}`);
   }

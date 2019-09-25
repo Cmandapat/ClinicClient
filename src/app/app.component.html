@@ -1,44 +1,93 @@
-
-
-
 <html>
-    <head>
-       
-    </head>
-    <body>
-        <!--Introductory Title-->
-        <h1 align="center">Welcome to the Clinic</h1>
-        <!--Start of the links to display-->
-        <div align="center">
-            <p>
-                <!--If no route is active, then only display the Sign In/Create Account option-->
-                <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="login" routerLinkActive="active">Sign In</a>
-                <a *ngIf="isNoRouteActivated()" else elseBlock routerLink="new" routerLinkActive="active">Create Account</a>
-                <!-- <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="appointment" routerLinkActive="active">Appointment List</a> -->
-                <!-- <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="appointment1" routerLinkActive="active">Appointment Form</a> -->
-                <!-- If the users route is active, then display the appointment making link -->
-                <a *ngIf="areLoginOrCreateActive()" routerLink="/" routerLinkActive="active">Home</a>
-                <!--If the doctors or users route is active, then display the link to go back to the admin page-->
-                <!--If the admin view is active, then display the ability to edit or add a new doctor, see the lists of doctors and users -->
-                <a *ngIf="isAdminRouteActivated()" routerLink="users" routerLinkActive="active">Users List</a>
-                <!-- <a routerLink="appointment" routerLinkActive="active">Appointment List</a> -->
-                <a *ngIf="isAdminRouteActivated()" routerLink="admin" routerLinkActive="active">Add New Doctor</a>
-                <a *ngIf="isAdminRouteActivated()" routerLink="adminUpdateDoctor" routerLinkActive="active">Edit Doctor</a>
-                <a *ngIf="isAdminRouteActivated()" routerLink="adminDeleteDoctor" routerLinkActive="active">Delete Doctor</a>
-                <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="appointment1" routerLinkActive="active">Make Appointment</a>
-                <a *ngIf="isAdminRouteActivated()" routerLink="appointment" routerLinkActive="active">See All Appointments</a>
-                <a *ngIf="isAdminNotHome()" routerLink="doctors" routerLinkActive="active">Back to Admin</a>
-                <!--Universal Link except for first log in--> 
-                <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="logout" routerLinkActive="active">Log Out</a>
+  <head> </head>
+  <body>
+    <!--Introductory Title-->
+    <h1 align="center">Welcome to the Clinic</h1>
+    <!--Start of the links to display-->
+    <div align="center">
+      <p>
+        <!--If no route is active, then only display the Sign In/Create Account option-->
+        <a
+          *ngIf="isNoRouteActivated()"
+          else
+          elseBlock
+          routerLink="login"
+          routerLinkActive="active"
+          >Sign In</a
+        >
+        <a
+          *ngIf="isNoRouteActivated()"
+          else
+          elseBlock
+          routerLink="new"
+          routerLinkActive="active"
+          >Create Account</a
+        >
+        <!-- <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="appointment" routerLinkActive="active">Appointment List</a> -->
+        <!-- <a *ngIf="isAnyUserRouteActivatedAfterLogin()" routerLink="appointment1" routerLinkActive="active">Appointment Form</a> -->
+        <!-- If the users route is active, then display the appointment making link -->
+        <a
+          *ngIf="areLoginOrCreateActive()"
+          routerLink="/"
+          routerLinkActive="active"
+          >Home</a
+        >
+        <!--If the doctors or users route is active, then display the link to go back to the admin page-->
+        <!--If the admin view is active, then display the ability to edit or add a new doctor, see the lists of doctors and users -->
+        <a
+          *ngIf="isAdminRouteActivated()"
+          routerLink="users"
+          routerLinkActive="active"
+          >Users List</a
+        >
+        <!-- <a routerLink="appointment" routerLinkActive="active">Appointment List</a> -->
+        <a
+          *ngIf="isAdminRouteActivated()"
+          routerLink="admin"
+          routerLinkActive="active"
+          >Add New Doctor</a
+        >
+        <a
+          *ngIf="isAdminRouteActivated()"
+          routerLink="adminUpdateDoctor"
+          routerLinkActive="active"
+          >Edit Doctor</a
+        >
+        <a
+          *ngIf="isAdminRouteActivated()"
+          routerLink="adminDeleteDoctor"
+          routerLinkActive="active"
+          >Delete Doctor</a
+        >
+        <a
+          *ngIf="isAnyUserRouteActivatedAfterLogin()"
+          routerLink="appointment1"
+          routerLinkActive="active"
+          >Make Appointment</a
+        >
+        <a
+          *ngIf="isAdminRouteActivated()"
+          routerLink="appointment"
+          routerLinkActive="active"
+          >See All Appointments</a
+        >
+        <a
+          *ngIf="isAdminNotHome()"
+          routerLink="doctors"
+          routerLinkActive="active"
+          >Back to Admin</a
+        >
+        <!--Universal Link except for first log in-->
+        <a
+          *ngIf="isAnyUserRouteActivatedAfterLogin()"
+          routerLink="logout"
+          routerLinkActive="active"
+          >Log Out</a
+        >
+      </p>
+    </div>
+    <!--remember to do routing for this-->
 
-
-                
-            </p>
-        </div>
-        <!--remember to do routing for this-->
-        
-        <router-outlet></router-outlet>
-    </body>
+    <router-outlet></router-outlet>
+  </body>
 </html>
-
-
