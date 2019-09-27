@@ -1,5 +1,25 @@
-<p style="color:black">
-  {{ apptDate }},{{ apptTime }}, {{ symptoms }},{{ doctorFirstName }},
-  {{ doctorLastName }}, {{ doctorSpecialization }},
-  {{ doctorYearsofExperience }}
-</p>
+<div id="appointment-container" class="container">
+  <div id="appointment-card" class="card" style="width: 45rem;">
+    <div class="card-body">
+      <h5 class="card-title">Appointment Details</h5>
+      <!-- <p class="card-text"> -->
+      <table class="card-text table">
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Reason</th>
+            <th>Doctor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{ apptDate }}@{{ apptTime }}</th>
+            <th>{{ symptoms }}</th>
+            <th>{{ doctorLastName }},{{ doctorFirstName }}</th>
+          </tr>
+        </tbody>
+      </table>
+      <!-- </p> -->
+    </div>
+  </div>
+</div>

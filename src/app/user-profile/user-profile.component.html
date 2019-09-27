@@ -1,33 +1,32 @@
 <!-- <p>user-profile-list works!</p> -->
-<html>
-  <body>
-    <h3>Welcome, {{ firstName }} {{ lastName }}</h3>
-    <hr />
-    <h3>Doctors:</h3>
-    <div class="container">
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th>Doctor</th>
-            <th>Specialization</th>
-            <th>Years Of Experience</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let doctor of doctors | async">
-            <td>{{ doctor.firstName }} {{ doctor.lastName }}</td>
-            <td>{{ doctor.specialization }}</td>
-            <td>{{ doctor.yearsOfExperience }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
-    <div *ngIf="hasAppointment; else noAppointment">
-      <app-appt-details></app-appt-details>
-    </div>
-    <ng-template #noAppointment>
-      <p>no appointment!</p>
-    </ng-template>
-  </body>
-</html>
+<div class="container">
+  <h3 style="margin-top:50px;">Welcome, {{ firstName }} {{ lastName }}</h3>
+
+  <table id="doctor-table" class="table table-dark">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Specialization</th>
+        <th>Years Of Experience</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of doctors | async">
+        <td>
+          {{ doctor.firstName | titlecase }}
+          {{ doctor.lastName | titlecase }}
+        </td>
+        <td>{{ doctor.specialization }}</td>
+        <td>{{ doctor.yearsOfExperience }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="hasAppointment; else noAppointment">
+    <app-appt-details></app-appt-details>
+  </div>
+  <ng-template #noAppointment>
+    <p>no appointment!</p>
+  </ng-template>
+</div>

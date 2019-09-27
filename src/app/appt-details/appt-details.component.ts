@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Location } from "@angular/common";
 import { Appointment } from "../model/appointment";
 import { ApptService } from "../appt.service";
+import { DoctorService } from "../doctor.service";
+import { Doctor } from "../model/doctor";
 
 @Component({
   selector: "app-appt-details",
@@ -18,7 +20,8 @@ export class ApptDetailsComponent implements OnInit {
     private apptService: ApptService,
     private location: Location,
     private router: Router,
-    private appointmentService: ApptService
+    private appointmentService: ApptService,
+    private doctorService: DoctorService
   ) {}
 
   id: string;
@@ -33,7 +36,8 @@ export class ApptDetailsComponent implements OnInit {
   doctorSpecialization: string;
   doctorYearsofExperience: number;
   doctorOnLeave: number;
-  needDoctor: boolean;
+  needDoctor: boolean = true;
+  doctor: Doctor = new Doctor();
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
@@ -44,13 +48,16 @@ export class ApptDetailsComponent implements OnInit {
         this.apptDate = parsedResponse.apptDate;
         this.apptTime = parsedResponse.apptTime;
         this.symptoms = parsedResponse.symptoms;
-        this.doctorFirstName = parsedResponse.doctor.firstName;
-        this.doctorLastName = parsedResponse.doctor.lastName;
-        this.doctorSpecialization = parsedResponse.doctor.specialization;
-        this.doctorYearsofExperience = parsedResponse.doctor.yearsOfExperience;
-        this.doctorOnLeave = parsedResponse.doctor.leave;
-        if (this.doctorOnLeave == null) {
-          this.needDoctor = true;
+        if (parsedResponse.doctor == null) {
+          console.log("hello");
+          //this.needDoctor = true;
+        } else {
+          this.doctorFirstName = parsedResponse.doctor.firstName;
+          this.doctorLastName = parsedResponse.doctor.lastName;
+          this.doctorSpecialization = parsedResponse.doctor.specialization;
+          this.doctorYearsofExperience =
+            parsedResponse.doctor.yearsOfExperience;
+          this.doctorOnLeave = parsedResponse.doctor.leave;
         }
       }
     });

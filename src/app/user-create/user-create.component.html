@@ -1,12 +1,24 @@
-<html>
-  <body>
-    <h1 align="center">Create a new Profile!</h1>
+<div class="container">
+  <div class="user-profile-container">
     <form autocomplete="off">
-      First Name: <input name="firstname" [(ngModel)]="user.firstName" /><br />
-      Last Name: <input name="lastname" [(ngModel)]="user.lastName" /><br />
-      DOB: <input name="date" type="date" [(ngModel)]="user.dob" /><br />
+      First Name: <br /><input
+        name="firstname"
+        [(ngModel)]="user.firstName"
+        class="form-control"
+      /><br />
+      Last Name: <br /><input
+        name="lastname"
+        [(ngModel)]="user.lastName"
+        class="form-control"
+      /><br />
+      DOB: <br /><input
+        class="form-control"
+        name="date"
+        type="date"
+        [(ngModel)]="user.dob"
+      /><br />
       <h2>{{ user.date }}</h2>
-      Gender:
+      Gender:<br />
       <input
         type="radio"
         [(ngModel)]="user.gender"
@@ -22,20 +34,38 @@
         value="female"
       />
       Female <br />
-      Current Address:
-      <input name="currAdd" [(ngModel)]="user.presentAddress" /><br />
-      Permanent Address:
-      <input name="permAdd" [(ngModel)]="user.permanentAddress" /><br />
-      EmailID: <input name="email" [(ngModel)]="user.emailId" /><br />
-      Phone: <input name="phoneNumber" [(ngModel)]="user.phoneNumber" /><br />
-      Password:
+      Current Address:<br />
+      <input
+        name="currAdd"
+        class="form-control"
+        [(ngModel)]="user.presentAddress"
+      /><br />
+      Permanent Address: <br />
+      <input
+        name="permAdd"
+        class="form-control"
+        [(ngModel)]="user.permanentAddress"
+      /><br />
+      EmailID: <br /><input
+        class="form-control"
+        name="email"
+        [(ngModel)]="user.emailId"
+      /><br />
+      Phone: <br />
+      <input
+        name="phoneNumber"
+        class="form-control"
+        [(ngModel)]="user.phoneNumber"
+      /><br />
+      Password: <br />
       <input
         type="password"
         autocomplete="off"
         name="password"
         [(ngModel)]="user.password"
+        class="form-control"
       /><br />
-      <button (click)="createUser()">Create</button>
+      <button class="btn btn-primary" (click)="createUser()">Create</button>
     </form>
-  </body>
-</html>
+  </div>
+</div>

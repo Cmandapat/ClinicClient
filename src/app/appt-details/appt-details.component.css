@@ -1,0 +1,10 @@
+#appointment-card {
+  -webkit-box-shadow: 7px 9px 19px -7px #000000;
+  box-shadow: 7px 9px 19px -7px #000000;
+  width: 50%;
+}
+#appointment-container .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

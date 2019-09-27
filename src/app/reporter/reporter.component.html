@@ -1,29 +1,92 @@
-<html>
-  <body>
-    <ul>
-      Doctor
-      <li *ngFor="let doctor of doctors | async">
-        <span
-          >ID: {{ doctor.id }} - {{ doctor.lastName }}, {{ doctor.firstName }}
-          {{ doctor.leaveStartDate }} {{ doctor.leaveEndDate }}</span
-        >
-      </li>
-    </ul>
-    <form>
-      Doctor ID<input [(ngModel)]="doctor.id" name="id" /><br />
-      Leave Start Date<input
-        type="date"
-        [(ngModel)]="doctor.leaveStartDate"
-        name="startdate"
-        required
-      /><br />
-      Leave End Date<input
-        type="date"
-        [(ngModel)]="doctor.leaveEndDate"
-        name="enddate"
-        required
-      /><br />
-      <button (click)="updateDoctor()">Update Doctor Leave</button>
-    </form>
-  </body>
-</html>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-lg-6 col-md-8 login-box">
+      <div class="col-lg-12 login-key">
+        <i class="fa fa-key" aria-hidden="true"></i>
+      </div>
+      <div class="col-lg-12 login-title">
+        UPDATE DOCTOR AVALABILITY
+      </div>
+
+      <div class="col-lg-12 login-form">
+        <div class="col-lg-12 login-form">
+          <form>
+            <div class="form-group">
+              <label class="form-control-label">Doctor ID</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                [(ngModel)]="doctor.id"
+                style="padding : 1px"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Leave Start</label>
+              <input
+                style="padding : 1px"
+                type="date"
+                name="startdate"
+                [(ngModel)]="doctor.leaveStartDate"
+                class="form-control"
+                i
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Leave End</label>
+              <input
+                style="padding : 1px"
+                type="date"
+                name="startend"
+                [(ngModel)]="doctor.leaveEndDate"
+                class="form-control"
+                i
+              />
+            </div>
+
+            <div class="col-lg-12 loginbttm">
+              <div class="col-lg-6 login-btm login-text">
+                <!-- Error Message -->
+              </div>
+              <div class="col-lg-6 login-btm login-button">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary"
+                  (click)="updateDoctor()"
+                >
+                  UPDATE!
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2"></div>
+    </div>
+  </div>
+</div>
+
+<table style="margin-top:20px" id="doctor-table" class="table table-dark">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Doctor</th>
+      <th>Specialization</th>
+      <th>Leave Start</th>
+      <th>Leave End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors | async">
+      <td>{{ doctor.id }}</td>
+      <td>
+        {{ doctor.firstName | titlecase }}
+        {{ doctor.lastName | titlecase }}
+      </td>
+      <td>{{ doctor.specialization }}</td>
+      <td>{{ doctor.leaveStartDate }}</td>
+      <td>{{ doctor.leaveEndDate }}</td>
+    </tr>
+  </tbody>
+</table>

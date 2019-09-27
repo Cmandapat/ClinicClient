@@ -14,8 +14,10 @@ export class ApptService {
 
   constructor(private http: HttpClient) {}
 
-  getApptList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getApptList() {
+    return this.http.get(`${this.baseUrl}`, {
+      responseType: "text" as "json"
+    });
   }
 
   public getAppt(id: string) {

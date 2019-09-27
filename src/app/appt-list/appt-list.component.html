@@ -1,13 +1,31 @@
-<html>
-  <body>
-    <h2>Appointments:</h2>
-    <ul>
-      <li *ngFor="let appt of appts | async">
-        <!--{{ appt.apptID }} -->
-        <a routerLink="/appointment/{{appt.apptID}}">
-          <span>{{appt.apptID}}</span>
-        </a>
-      </li>
-    </ul>
-  </body>
-</html>
+<h2>Appointments:</h2>
+<!-- <ul>
+  <li *ngFor="let appt of appts | async">
+    {{ appt.apptID }}
+    <a routerLink="/appointment/{{ appt.apptID }}">
+      <span>{{ appt.apptID }}</span>
+    </a>
+  </li>
+</ul> -->
+<table style="margin-top:20px" class="table table-dark">
+  <thead>
+    <tr>
+      <th>Appointment Id</th>
+      <th>Appoinment Date</th>
+      <th>Appointment Time</th>
+      <th>Symptoms</th>
+      <th>PatientId</th>
+      <th>Doctor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appt of appointmentList">
+      <td>{{ appt.apptID }}</td>
+      <td>{{ appt.apptDate }}</td>
+      <td>{{ appt.apptTime }}</td>
+      <td>{{ appt.symptoms }}</td>
+      <td>{{ appt.patientID }}</td>
+      <td>{{ appt.doctorID }}</td>
+    </tr>
+  </tbody>
+</table>

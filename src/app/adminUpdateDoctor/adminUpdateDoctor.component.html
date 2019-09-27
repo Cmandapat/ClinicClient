@@ -1,8 +1,67 @@
-<h3> Update a Doctor</h3>
-<form>
-    Doctor ID: <input [(ngModel)] = 'doctor.id' name = 'upid'> <br />
-    Years of Exp<input [(ngModel)] = 'doctor.yearsOfExperience' name = 'upyoe'> <br />
-    specialization <input [(ngModel)] = 'doctor.specialization' name = 'upspecs'> <br />
-    
-    <button (click)="updateDoctor()">Update Doctor</button>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-lg-6 col-md-8 login-box">
+      <div class="col-lg-12 login-key">
+        <i class="fa fa-key" aria-hidden="true"></i>
+      </div>
+      <div class="col-lg-12 login-title">
+        UPDATE DOCTOR
+      </div>
+
+      <div class="col-lg-12 login-form">
+        <div class="col-lg-12 login-form">
+          <form>
+            <div class="form-group">
+              <label class="form-control-label">Doctor ID</label>
+              <input
+                type="text"
+                class="form-control"
+                name="upid"
+                [(ngModel)]="doctor.id"
+                style="padding : 1px"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Years of Experience</label>
+              <input
+                style="padding : 1px"
+                [(ngModel)]="doctor.yearsOfExperience"
+                name="upyoe"
+                class="form-control"
+                i
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Specialization</label>
+              <select [(ngModel)]="doctor.specialization" name="docspecs">
+                <option>Dermatologist</option>
+                <option>Family Physician</option>
+                <option>Obstetricians and Gynecologist </option>
+                <option>Ophthalmologist </option>
+                <option>Pediatrician</option>
+                <option>Sports Medicine Specialists </option>
+              </select>
+            </div>
+
+            <div class="col-lg-12 loginbttm">
+              <div class="col-lg-6 login-btm login-text">
+                <!-- Error Message -->
+              </div>
+              <div class="col-lg-6 login-btm login-button">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary"
+                  (click)="updateDoctor()"
+                >
+                  UPDATE!
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-2"></div>
+    </div>
+  </div>
+</div>
